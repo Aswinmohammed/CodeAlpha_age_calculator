@@ -1,20 +1,43 @@
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    cursor: pointer;
+    background: linear-gradient(120deg, #007bff, #ff007b, #7bff00, #00ff7b, #ffbf00);
+    background-size: 200% 200%;
+    animation: gradientFlow 8s infinite ease-in-out;
 }
 
 .container {
     text-align: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.85); /* Slightly less transparent for better text visibility */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid #007bff;
+    animation: borderAnimation 5s infinite linear; /* Keeps the border animation */
 }
 
 h1 {
@@ -52,6 +75,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    transition: background 0.3s ease;
 }
 
 button:hover {
